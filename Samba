@@ -1,0 +1,19 @@
+cd /home
+mkdir share1
+mkdir share2
+vi /etc/samba.conf
+
+[share1]
+        path = /home/share1
+        writeable = yes
+[share2]
+        path = /home/share2
+        writeable = yes
+:wq!
+
+useradd user1
+useradd user2
+passwd user1 (wachtwoord = root)
+passwd user2 (wachtwoord = root)
+smbpasswd -a user1 (wachtwoord = root)
+smbpasswd -a user2 (wachtwootd = root)
